@@ -3,6 +3,9 @@ const mysql = require("mysql");
 const dotenv = require("dotenv");
 const path = require('path');
 const { appendFile } = require("fs");
+const { handlebars } = require("hbs");
+const hbs = require('express-handlebars');
+
 
 //Save sensitive information
 dotenv.config({ path: './.env'});
@@ -31,6 +34,12 @@ app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
 // use res.render to load up an ejs view file
 app.set('view engine', 'hbs');
 
+//Layouts for the frontend using main.html
+app.engine( 'hbs', hbs.engine( {
+    extname: 'hbs',
+    defaultView: 'default',
+    layoutsDir: __dirname + '/views/layouts/'
+}));
 
 
 //Start database...you can edit to connect to your own database
