@@ -56,3 +56,53 @@ exports.register = (req,res) => {
 
 
 }
+
+
+exports.login = (req,res) => {
+    //Unpack the request data
+    console.log(req.body);
+
+    const email = req.body.email;
+    const password = req.body.password;
+
+    //check if the email exists in the datbase
+    db.query("SELECT email FROM users WHERE email = ?", [email], (error,results) =>{
+        if(error){
+            console.log(error);
+        }
+        //if email exists
+        if(results.length > 0){
+            //Get the password for the email
+            db.query("SELECT password FROM users WHERE email = ?", [email], (error,results) =>{
+
+                if(error){
+                    console.log(error);
+                }else{
+                    //Compare both hashed password
+                    const dbpassword = results[0].password
+                    bcrypt.compare(password,dbpassword).then((match) =>{
+                        //return incorrect password if it doesnt match
+                        if(!match){
+                            return res.render('login', {
+                                message: 'Incorrect Password'
+                            });
+                        //return loggin if it matches 
+                        }else{
+                            return res.render('login', {
+                                message: 'Logged in'
+                            });
+                        }
+                    })
+                }
+            })
+
+        //If email not found, return User doesnt exist
+        }else if( results.length <= 0){
+            return res.render('login', {
+                message: 'User do not exit, please register'
+            });
+        }
+
+    })
+
+}
