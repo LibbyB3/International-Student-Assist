@@ -3,6 +3,9 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const dbConnection = require('../config/dbConnection').database;
 const User = require("../model/user")
+const cookieParser = require("cookie-parser");
+const {createTokens , validateToken} = require('../JWT')
+
 
 //Save sensitive information
 dotenv.config({ path: './.env'});
@@ -30,10 +33,20 @@ exports.register = async (req,res) => {
                 name,
                 email,
                 password: hashedPassword,
-            });
-            return res.render('register', {
-                message: 'User Registered'
-            });
+                role:"user"
+            }).then((newUser) => {
+                //Write code for authenticated users, JWT 
+                const accessToken = createTokens(newUser)
+
+                res.cookie("access-token", accessToken, {
+                    httpOnly:true,
+                    maxAge: 12*60*60*1000
+                });
+
+                return res.render('register', {
+                    message: 'User Registered'
+                });
+            }); 
         }
             
         }else if(user){
@@ -41,10 +54,10 @@ exports.register = async (req,res) => {
                 message: 'User already Exits, please Login'
             })
         } 
-        } catch (error) {
-            console.log(error)
-        }
+    } catch (error) {
+        console.log(error)
     }
+}
 
 
 
@@ -76,8 +89,15 @@ exports.login = async (req,res) => {
                 //return loggin if it matches 
                 }else{
 
+                    //Write code for authenticated users, JWT 
+                    const accessToken = createTokens(user)
 
-                    //Write code for authenticated users, JWT and cookie parser
+                    res.cookie("access-token", accessToken, {
+                        httpOnly:true,
+                        maxAge: 12*60*60*1000
+                    });
+
+                    
                     return res.render('login', {
                         message: 'Logged in'
                     });

@@ -9,11 +9,15 @@ const { handlebars } = require("hbs");
 const hbs = require('express-handlebars');
 
 
+
+
+
 //Save sensitive information
 dotenv.config({ path: './.env'});
 
 //server
 const app = express();
+
 
 const publicDirectory =path.join(__dirname,"public");
 
