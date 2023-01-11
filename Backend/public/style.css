@@ -9,30 +9,26 @@ nav.custom-nav {
     justify-content: space-between;
 }
 
-ul.navbar-nav {
+ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-li.nav-item {
+li {
     list-style: none;
 }
 
-a.nav-link {
+ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     padding: 5px 8px;
 }
 
-.navbar ul li a:hover {
+ul li a:hover {
     color: yellow;
     text-decoration: none;
 }
 
-
-/*.custom-register-form{
-    background-color: #2e105e;
-}*/
 
