@@ -1,0 +1,8 @@
+# NodeJS specific #
+.nyc_output/
+coverage/
+/backend/node_modules/
+/backend/npm-debug.log
+/backend/package-lock.json
+test/*.log
+/backend/.env
