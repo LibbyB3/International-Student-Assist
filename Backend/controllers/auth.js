@@ -98,9 +98,7 @@ exports.login = async (req,res) => {
                     });
 
                     
-                    return res.render('login', {
-                        message: 'Logged in'
-                    });
+                    return res.redirect("/");
                 }
             })
         }

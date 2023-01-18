@@ -17,13 +17,14 @@ const validateToken = (req , res , next) =>{
     const accessToken = req.cookies["access-token"]
 
     if(!accessToken){
-        return res.render('login', {
-            message: 'Please Login'
-        });
+        res.locals.authenticated = false;
+        res.authenticated=false;
+        return next()
     }
     try{
         const validToken = jwt.verify(accessToken , secretKey)
         if(validToken){
+            res.locals.authenticated = true;
             req.authenticated =true
             return next()
         }
