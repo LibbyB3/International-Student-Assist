@@ -7,15 +7,15 @@ const router = express.Router();
 router.use(cookieParser());
 router.use(validateToken)
 
-router.get("/", (req,res) => {
+router.get("/", (req, res) => {
     res.render('index');
 })
 
-router.get("/register", (req,res) => {
+router.get("/register", (req, res) => {
     res.render('register');
 })
 
-router.get("/login", (req,res) => {
+router.get("/login", (req, res) => {
     res.render('login');
 });
 
@@ -24,20 +24,20 @@ router.get('/logout', (req, res) => {
     res.redirect('login')
 })
 
-router.get("/about", (req,res) => {
+router.get("/about", (req, res) => {
     res.render('aboutUs');
 })
 
-router.get("/task", validateToken, (req,res) => {
-    if (res.locals.authenticated){
+router.get("/task", validateToken, (req, res) => {
+    if (res.locals.authenticated) {
         res.render('task');
-    }else{
+    } else {
         res.redirect('login')
     }
-    
+
 })
 
-router.get("/contact", (req,res) => {
+router.get("/contact", (req, res) => {
     res.render('contactUs');
 })
 
