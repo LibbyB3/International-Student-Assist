@@ -1,108 +1,109 @@
-const mysql = require("mysql");
 const dotenv = require("dotenv");
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
+const dbConnection = require('../config/dbConnection').database;
+const User = require("../model/user")
+const cookieParser = require("cookie-parser");
+const {createTokens , validateToken} = require('../JWT')
+
 
 //Save sensitive information
 dotenv.config({ path: './.env'});
 
-const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE,
-    port: process.env.DATABASE_PORT
-})
 
-exports.register = (req,res) => {
-    console.log(req.body);
+exports.register = async (req,res) => {
 
-    const name =req.body.name;
-    const email = req.body.email;
-    const password = req.body.password;
-    const passwordConfirm = req.body.passwordConfirm;
+    var name =req.body.name;
+    var email = req.body.email;
+    var password = req.body.password;
+    var passwordConfirm = req.body.passwordConfirm;
 
-    db.query("SELECT email FROM users WHERE email = ?", [email], async (error,results) =>{
-        if(error){
-            console.log(error);
-        }
-        if(results.length > 0){
-            return res.render('register', {
-                message: 'Email is already in use'
-            });
-        }else if( password !== passwordConfirm){
-            return res.render('register', {
-                message: 'Passwords do not match'
-            });
-        }
-
-        let hashedPassword =await bcrypt.hash(password, 8);
-        console.log(hashedPassword);
-
-        db.query("Insert into users set ?",{ name: name,email: email,password: hashedPassword }, (error,results) =>{
-            if(error){
-                console.log(error);
-            }else{
-                console.log(results)
+    try {
+        const user = await User.findOne({where: {email : email}})
+        if (!user) {
+            if( password !== passwordConfirm){
                 return res.render('register', {
-                    message: 'User registered'
+                    message: 'Passwords do not match'
+                })
+            }else{
+            const hashedPassword = await bcrypt.hash(password, 8);
+    
+            // Create a new user with the provided name, email, and hashed password
+            const newUser = User.create({
+                name,
+                email,
+                password: hashedPassword,
+                role:"user"
+            }).then((newUser) => {
+                //Write code for authenticated users, JWT 
+                const accessToken = createTokens(newUser)
+
+                res.cookie("access-token", accessToken, {
+                    httpOnly:true,
+                    maxAge: 12*60*60*1000
                 });
-            }
-        })
 
-
-
-    })
-
-
+                return res.render('register', {
+                    message: 'User Registered'
+                });
+            }); 
+        }
+            
+        }else if(user){
+            return res.render('register', {
+                message: 'User already Exits, please Login'
+            })
+        } 
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 
-exports.login = (req,res) => {
-    //Unpack the request data
-    console.log(req.body);
 
-    const email = req.body.email;
-    const password = req.body.password;
+exports.login = async (req,res) => {
+    var { email, password } = req.body
+    // Check if username and password is provided
+    if (!email || !password) {
+        return res.render('login', {
+            message: "Username or Password not present",
+        });
+    }
 
-    //check if the email exists in the datbase
-    db.query("SELECT email FROM users WHERE email = ?", [email], (error,results) =>{
-        if(error){
-            console.log(error);
-        }
-        //if email exists
-        if(results.length > 0){
-            //Get the password for the email
-            db.query("SELECT password FROM users WHERE email = ?", [email], (error,results) =>{
-
-                if(error){
-                    console.log(error);
+    try {
+        const user = await User.findOne({ email, password })
+        
+        if (!user) {
+            return res.render('login', {
+                message: 'User not Found, Please Register'
+            });
+        } else {
+            //Compare both hashed password
+            const dbpassword = user.password
+            bcrypt.compare(password,dbpassword).then((match) =>{
+                //return incorrect password if it doesnt match
+                if(!match){
+                    return res.render('login', {
+                        message: 'Incorrect Password'
+                    });
+                //return loggin if it matches 
                 }else{
-                    //Compare both hashed password
-                    const dbpassword = results[0].password
-                    bcrypt.compare(password,dbpassword).then((match) =>{
-                        //return incorrect password if it doesnt match
-                        if(!match){
-                            return res.render('login', {
-                                message: 'Incorrect Password'
-                            });
-                        //return loggin if it matches 
-                        }else{
-                            return res.render('login', {
-                                message: 'Logged in'
-                            });
-                        }
-                    })
+
+                    //Write code for authenticated users, JWT 
+                    const accessToken = createTokens(user)
+
+                    res.cookie("access-token", accessToken, {
+                        httpOnly:true,
+                        maxAge: 12*60*60*1000
+                    });
+
+                    
+                    return res.redirect("/");
                 }
             })
-
-        //If email not found, return User doesnt exist
-        }else if( results.length <= 0){
-            return res.render('login', {
-                message: 'User do not exit, please register'
-            });
         }
-
-    })
-
+        } catch (error) {
+            console.log(error)
+        }
+    
 }

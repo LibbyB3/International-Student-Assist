@@ -1,9 +1,32 @@
-.custom-nav {
-    background-color: #2e105e;
+nav.custom-nav {
+    /*background-color: #2e105e;
     color: white;
+    */
+    background-color: #563d7c;
+    color: #fff;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.custom-register-form{
-    background-color: #2e105e;
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
+li {
+    list-style: none;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 8px;
+}
+
+ul li a:hover {
+    color: yellow;
+    text-decoration: none;
+}
