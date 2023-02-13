@@ -18,6 +18,26 @@ const User = dbConnection.define("users", {
     }
  });
 
+ const Task = dbConnection.define("task", {
+  page_number: {
+    type: DataTypes.INTEGER,
+  },
+  name: {
+    type: DataTypes.STRING,
+  },
+  visited: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  }
+
+});
+
+User.hasMany(Task, {
+  foreignKey: 'userId',
+  as: 'tasks',
+  onDelete: 'CASCADE'
+});
+
 
 //Create database if it doesnt exist already
  dbConnection.sync().then(() => {
@@ -26,4 +46,4 @@ const User = dbConnection.define("users", {
     console.error('Unable to create table : ', error);
  });
 
- module.exports= User;
+ module.exports= {User,Task};
