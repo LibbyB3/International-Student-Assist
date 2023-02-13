@@ -49,6 +49,10 @@ app.engine(
     extname: "hbs",
     defaultView: "default",
     layoutsDir: __dirname + "/views/layouts/",
+    runtimeOptions: {
+            allowProtoPropertiesByDefault: true,
+            allowProtoMethodsByDefault: true,
+    }
   })
 );
 

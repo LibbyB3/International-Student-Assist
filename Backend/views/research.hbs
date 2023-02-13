@@ -7,72 +7,34 @@
                     <span class="fs-5 d-none d-sm-inline" style="color:yellow">My Roadmap</span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    {{#each tasks}}
+                    {{#if this.visited}}
                     <li class="nav-item">
-                        <a href="/task/get-started" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i>
-                            <span class="ms-1 d-none d-sm-inline">Getting Started</span>
-                        </a>
+                    <a href="/task/page/{{this.page_number}}" class="nav-link align-middle px-0">
+                        <i class="fs-4 bi-house"></i>
+                        <span class="ms-1 d-none d-sm-inline text-muted">{{this.name}}</span>
+                    </a>
                     </li>
+                    {{else}}
                     <li class="nav-item">
-                        <a href="/task/research-schools" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i>
-                            <span class="ms-1 d-none d-sm-inline">Research Schools</span>
-                        </a>
+                    <a href="/task/page/{{this.page_number}}" class="nav-link align-middle px-0">
+                        <i class="fs-4 bi-house"></i>
+                        <span class="ms-1 d-none d-sm-inline ">{{this.name}}</span>
+                    </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/task/apply" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i>
-                            <span class="ms-1 d-none d-sm-inline">Apply</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/task/submit-transcripts" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i>
-                            <span class="ms-1 d-none d-sm-inline">Submit Transcripts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/task/english-proficiency" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i>
-                            <span class="ms-1 d-none d-sm-inline">English Proficiency</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/task/testing-and-scores" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i>
-                            <span class="ms-1 d-none d-sm-inline">Testing and Scores</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/task/accepted" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i>
-                            <span class="ms-1 d-none d-sm-inline">You've Been Accepted</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/task/i20-visa-and-fees" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i>
-                            <span class="ms-1 d-none d-sm-inline">I-20, Visa and Fees</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/task/relocate" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i>
-                            <span class="ms-1 d-none d-sm-inline">Planning to Relocate</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/task/additional-tips" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i>
-                            <span class="ms-1 d-none d-sm-inline">Additional Tips</span>
-                        </a>
-                    </li>
+                    {{/if}}
+                {{/each}}
                 </ul>
                 <hr />
             </div>
         </div>
         <div class="col py-3">
             Research Schools Page
+            {{#if complete}}
+            <a href="/task/complete/{{task_id}}"> Task Completed</a>
+            {{else}}
+            <a href="/task/complete/{{task_id}}"> Click to Complete Task</a>
+            {{/if}}
         </div>
     </div>
 </div>
