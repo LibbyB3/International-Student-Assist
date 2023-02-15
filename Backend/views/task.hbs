@@ -6,26 +6,108 @@
           style="font-weight:600; font-size:18px;">
           <span class="fs-5 d-none d-sm-inline" style="color:yellow">My Roadmap</span>
         </a>
-        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-          {{#each tasks}}
-            {{#if this.visited}}
-            <li class="nav-item">
-              <a href="/task/page/{{this.page_number}}" class="nav-link align-middle px-0">
-                <i class="fs-4 bi-house"></i>
-                <span class="ms-1 d-none d-sm-inline text-muted">{{this.name}}</span>
-              </a>
-            </li>
-            {{else}}
-            <li class="nav-item">
-              <a href="/task/page/{{this.page_number}}" class="nav-link align-middle px-0">
-                <i class="fs-4 bi-house"></i>
-                <span class="ms-1 d-none d-sm-inline ">{{this.name}}</span>
-              </a>
-            </li>
-            {{/if}}
-          {{/each}}
-          
-        </ul>
+<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="/task/get-started" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i>
+                            {{#if tasks.task1}}
+                            <span class="ms-1 d-none d-sm-inline text-muted">Getting Started</span>
+                            {{else}}
+                            <span class="ms-1 d-none d-sm-inline">Getting Started</span>
+                            {{/if}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/task/research" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i>
+                            {{#if tasks.task2}}
+                            <span class="ms-1 d-none d-sm-inline text-muted">Research Schools</span>
+                            {{else}}
+                            <span class="ms-1 d-none d-sm-inline">Research Schools</span>
+                            {{/if}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/task/apply" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i>
+                            {{#if tasks.task3}}
+                            <span class="ms-1 d-none d-sm-inline text-muted">Apply</span>
+                            {{else}}
+                            <span class="ms-1 d-none d-sm-inline">Apply</span>
+                            {{/if}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/task/transcripts" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i>
+                            {{#if tasks.task4}}
+                            <span class="ms-1 d-none d-sm-inline text-muted">Submit Transcripts</span>
+                            {{else}}
+                            <span class="ms-1 d-none d-sm-inline">Submit Transcripts</span>
+                            {{/if}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/task/eng-proficiency" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i>
+                            {{#if tasks.task5}}
+                            <span class="ms-1 d-none d-sm-inline text-muted">English Proficiency</span>
+                            {{else}}
+                            <span class="ms-1 d-none d-sm-inline">English Proficiency</span>
+                            {{/if}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/task/testing" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i>
+                            {{#if tasks.task6}}
+                            <span class="ms-1 d-none d-sm-inline text-muted">Testing and Scores</span>
+                            {{else}}
+                            <span class="ms-1 d-none d-sm-inline">Testing and Scores</span>
+                            {{/if}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/task/accepted" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i>
+                            {{#if tasks.task7}}
+                            <span class="ms-1 d-none d-sm-inline text-muted">You've Been Accepted</span>
+                            {{else}}
+                            <span class="ms-1 d-none d-sm-inline">You've Been Accepted</span>
+                            {{/if}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/task/visa" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i>
+                            {{#if tasks.task8}}
+                            <span class="ms-1 d-none d-sm-inline text-muted">I-20, Visa and Fees</span>
+                            {{else}}
+                            <span class="ms-1 d-none d-sm-inline">I-20, Visa and Fees</span>
+                            {{/if}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/task/relocate" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i>
+                            {{#if tasks.task9}}
+                            <span class="ms-1 d-none d-sm-inline text-muted">Planning to Relocate</span>
+                            {{else}}
+                            <span class="ms-1 d-none d-sm-inline">Planning to Relocate</span>
+                            {{/if}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/task/tips" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i>
+                            {{#if tasks.task10}}
+                            <span class="ms-1 d-none d-sm-inline text-muted">Additional Tips</span>
+                            {{else}}
+                            <span class="ms-1 d-none d-sm-inline">Additional Tips</span>
+                            {{/if}}
+                        </a>
+                    </li>
+                </ul>
         <hr />
       </div>
     </div>
