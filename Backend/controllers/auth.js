@@ -45,21 +45,10 @@ exports.register = async (req,res) => {
                     httpOnly:true,
                     maxAge: 12*60*60*1000
                 });
-
-            const tasks = [
-                { page_number: 1, name: "Getting Started" ,userId: newUser.id },
-                { page_number: 2, name: "Research Schools",userId: newUser.id },
-                { page_number: 3, name: "Apply" ,userId: newUser.id },
-                { page_number: 4, name: "Submit Transcripts" ,userId: newUser.id },
-                { page_number: 5, name: "English Proficiency" ,userId: newUser.id },
-                { page_number: 6, name: "Testing and Scores",userId: newUser.id },
-                { page_number: 7, name: "You've Been Accepted" ,userId: newUser.id },
-                { page_number: 8, name: "I-20, Visa and Fees" ,userId: newUser.id },
-                { page_number: 9, name: "Planning to Relocate",userId: newUser.id },
-                { page_number: 10, name: "Additional Tips" ,userId: newUser.id },
-                ];
-        
-                const newTask = Task.bulkCreate(tasks)
+    
+                const newTask = Task.create({
+                    userId : newUser.id
+                })
                 .then(() => console.log("Task created for User"))
                 .catch((error) => console.log(error));
 

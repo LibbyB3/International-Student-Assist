@@ -19,13 +19,43 @@ const User = dbConnection.define("users", {
  });
 
  const Task = dbConnection.define("task", {
-  page_number: {
-    type: DataTypes.INTEGER,
+  task1: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   },
-  name: {
-    type: DataTypes.STRING,
+  task2: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   },
-  visited: {
+  task3: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
+  task4: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
+  task5: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
+  task6: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
+  task7: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
+  task8: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
+  task9: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
+  task10: {
     type: Sequelize.BOOLEAN,
     defaultValue: false
   }
