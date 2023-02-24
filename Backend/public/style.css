@@ -3,7 +3,7 @@ nav.custom-nav {
     color: white;
     */
     background-color: #563d7c;
-    color: #fff;
+    color: #ffffff;
     padding: 20px 60px;
     display: flex;
     justify-content: space-between;
@@ -19,11 +19,13 @@ li {
     list-style: none;
 }
 
-ul li a {
-    color: #fff;
-    text-decoration: none;
+.nav-item {
+    color: #ffffff;
     font-weight: bold;
-    padding: 5px 8px;
+   }
+.nav-link {
+    color: #ffffff;
+    font-weight: bold;
 }
 
 ul li a:hover {
