@@ -111,12 +111,11 @@
                 <hr />
             </div>
         </div>
-        <div class="col py-3">
-            Content for Relocate Page
-            {{#if tasks.task9}}
-            <a href="/task/complete/task9"> Task Completed</a>
+        <div class="col container-fluid m-3 py-3">
+            <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Content for Relocate Page</h1>            {{#if tasks.task9}}
+            <a class="complete-btn" href="/task/complete/task9"> Task Completed</a>
             {{else}}
-            <a href="/task/complete/task9"> Click to Complete Task</a>
+            <a class="complete-btn" href="/task/complete/task9"> Click to Complete Task</a>
             {{/if}}
         </div>
     </div>

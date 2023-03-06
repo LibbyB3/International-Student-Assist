@@ -111,12 +111,12 @@
                 <hr />
             </div>
         </div>
-        <div class="col py-3">
-            Research Schools Page
+        <div class="col container-fluid m-3 py-3">
+            <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Research Schools Page</h1>
             {{#if tasks.task2}}
-            <a href="/task/complete/task2"> Task Completed</a>
+            <a class="complete-btn" href="/task/complete/task2"> Task Completed</a>
             {{else}}
-            <a href="/task/complete/task2"> Click to Complete Task</a>
+            <a class="complete-btn" href="/task/complete/task2"> Click to Complete Task</a>
             {{/if}}
         </div>
     </div>
