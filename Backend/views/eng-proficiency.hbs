@@ -111,18 +111,27 @@
                 <hr />
             </div>
         </div>
-        <div class="col py-3">
-            <h1 style="font-size: 4.5vh">Demonstrate English Proficiency</h1>
+        <div class="col container-fluid m-3 py-3">
+            <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Demonstrate English Proficiency</h1>
             {{#if tasks.task5}}
-            <a href="/task/complete/task5"> Task Completed</a>
+            <a class="complete-btn" href="/task/complete/task5"> Task Completed</a>
             {{else}}
-            <a href="/task/complete/task5"> Click to Complete Task</a>
+            <a class="complete-btn" href="/task/complete/task5"> Click to Complete Task</a>
             {{/if}}
-            <p>Universities want their students to succeed, so most US universities will want to make sure that you are proficient
+            <p style="margin: 30px 0px;">Universities want their students to succeed, so most US universities will want to make sure that you are proficient
                 in English either before they admit you to their university, or after admission but prior to course enrollment. If
                 the official language of your home country is also English, or if you’ve studied for a significant period in another
                 English-speaking country, this requirement may be waived. If not, you’ll have to demonstrate proficiency.</p>
-            <h2 style="font-size: 3.5vh">How do I demonstrate English proficiency?</h2>
+
+            <div class="accordion mt-4" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h2 style="font-size: 3.5vh">How do I demonstrate English proficiency?</h2>
+            </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
             <p>Most universities provide many ways to demonstrate proficiency in English, so you’ll need to visit the university’s
                 international admissions website to see their guidelines. However, three of the most common ways US institutions
                 allow you to demonstrate proficiency are as follows:</p>
@@ -134,6 +143,10 @@
                 <li> 3. successfully completing an English language program and earning an ELS EAP (English for Academic Purposes)
                     Level 112 Certificate of Completion.</li>
             </ol>
+            </div>
+            </div>
+        </div>
+        </div>
         </div>
     </div>
 </div>

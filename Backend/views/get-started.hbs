@@ -116,14 +116,14 @@
         <hr />
       </div>
     </div>
-    <div class="col py-3">
-      <h1 style="font-size: 4.5vh">Where to Begin</h1>
+    <div class="col container-fluid m-3 py-3">
+      <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Where to Begin</h1>
       {{#if tasks.task1}}
-      <a href="/task/complete/task1"> Task Completed</a>
+      <a class="complete-btn" href="/task/complete/task1"> Task Completed</a>
       {{else}}
-      <a href="/task/complete/task1"> Click to Complete Task</a>
+      <a class="complete-btn" href="/task/complete/task1"> Click to Complete Task</a>
       {{/if}}
-      <p>
+      <p style="margin: 30px;"></p>
         Iternational Student Assist provides a streamlined roadmap of the
         processes, tests, and forms required for you to apply to universities in
         the US.
