@@ -43,6 +43,13 @@ router.post("/sendemail", async (req, res) => {
   <h3>Message</h3>
   <p>${req.body.message}</p>
   `;
+  const userOutput = `
+  <h3>Dear ${req.body.name},</h3>
+
+  <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
+  <p> Best regards,</p>
+  <p> International Student Assist Team </p>
+  `;
 
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -58,10 +65,17 @@ router.post("/sendemail", async (req, res) => {
   // send mail with defined transport object
   let mailOptions = await transporter.sendMail({
     from: '"ISA Message" libbyblair13@gmail.com', // sender address
-    to: "blaire51@lsus.edu", // list of receivers
+    to: "internationalstudentassistapp@gmail.com", // list of receivers
     subject: "Contact Form Message", // Subject line
     text: "Hello world?", // plain text body
     html: output, // html body
+  });
+  let userMailOptions = await transporter.sendMail({
+    from: '"ISA Message" libbyblair13@gmail.com', // sender address
+    to: `${req.body.email}`, // list of receivers
+    subject: "Thank you for contacting us!", // Subject line
+    text: "Hello world?", // plain text body
+    html: userOutput, // html body
   });
 
   transporter.sendMail(mailOptions, (error, info) => {
@@ -74,10 +88,19 @@ router.post("/sendemail", async (req, res) => {
 
     // Preview only available when sending through an Ethereal account
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  });
+  transporter.sendMail(userMailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
 
-    return res.render("contactUs", {
-      message: "Message Sent",
-    });
+    console.log("Message sent: %s", info.messageId);
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+
+    // Preview only available when sending through an Ethereal account
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
+    return res.render("contactUsSuccess");
   });
 });
 module.exports = router;
