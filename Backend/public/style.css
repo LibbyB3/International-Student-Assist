@@ -22,7 +22,8 @@ li {
 .nav-item {
     color: #ffffff;
     font-weight: bold;
-   }
+}
+
 .nav-link {
     color: #ffffff;
     font-weight: bold;
@@ -33,17 +34,11 @@ ul li a:hover {
     text-decoration: none;
 }
 
-.complete-btn{
-    background-color: #563d7c;
-    color: white;
-    padding: 15px 25px;
-    text-decoration: none;
-    font-weight: bold;
-  }
+.card {
+    margin: 5% 0%;
+}
 
-.accordion-button:focus {
-    box-shadow: none;
-    outline: 0;
-    border: none;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, .125);
-  }
+.card-body {
+    margin: 0% 0% 0% 3%;
+    padding: 6% 0%;
+}
