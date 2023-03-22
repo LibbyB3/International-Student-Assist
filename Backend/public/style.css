@@ -44,3 +44,18 @@ a.nav-link:hover {
     padding: 6% 0%;
 }
 
+.complete-btn{
+    background-color: #563d7c;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+.accordion-button:focus {
+    box-shadow: none;
+    outline: 0;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, .125);
+  }
+
