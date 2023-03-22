@@ -29,16 +29,18 @@ li {
     font-weight: bold;
 }
 
-ul li a:hover {
+a.nav-link:hover {
     color: yellow;
     text-decoration: none;
 }
+
 
 .card {
     margin: 5% 0%;
 }
 
-.card-body {
+.custom-card-body {
     margin: 0% 0% 0% 3%;
     padding: 6% 0%;
 }
+
