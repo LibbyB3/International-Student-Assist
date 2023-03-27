@@ -15,6 +15,16 @@ const User = dbConnection.define("users", {
     },
     role: {
         type: DataTypes.STRING,
+    },
+    resetPasswordToken: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: undefined
+    },
+    resetPasswordExpires: {
+      type: DataTypes.DATE,
+      allowNull: true,
+      defaultValue: undefined
     }
  });
 

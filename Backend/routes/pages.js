@@ -2,6 +2,9 @@ const express = require("express");
 const { validateToken } = require("../JWT");
 const cookieParser = require("cookie-parser");
 const nodemailer = require("nodemailer");
+const crypto = require("crypto")
+const {User , Task} = require("../model/user")
+const bcrypt = require('bcryptjs')
 
 const router = express.Router();
 router.use(cookieParser());
@@ -103,4 +106,103 @@ router.post("/sendemail", async (req, res) => {
     return res.render("contactUsSuccess");
   });
 });
+
+router.route("/forget-password")
+  .get((req,res) =>{
+    res.render("forget-password");
+  })
+  .post(async (req,res) =>{
+    try{
+      const { email } = req.body;
+      
+      //Generate reset token
+      const token = crypto.randomBytes(20).toString('hex');
+
+      const user = await User.findOne({ email });
+
+      if(!user){
+        return res.render("forget-password" , {message: "User not found"})
+      }
+
+      // Save the password reset token and expiry date to the user's document
+      user.resetPasswordToken = token;
+      user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+
+      await user.save();
+      
+      let transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        //service: "gmail",
+        //port: 587,
+        //secure: false, // true for 465, false for other ports
+        auth: {
+          user: "libbyblair13@gmail.com", // generated ethereal user
+          pass: "hjhaclobgyfhnztl", // generated ethereal password
+        },
+      });
+
+      // Create the email message
+      const mailOptions = {
+        from: '"ISA Message" libbyblair13@gmail.com',
+        to: email,
+        subject: 'Reset your password',
+        text: `Hi ${user.name},\n\n` +
+          'You are receiving this email because you (or someone else) has requested a password reset for your account.\n\n' +
+          'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+          `http://${req.headers.host}/reset-password/${token}\n\n` +
+          'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+      };
+
+      // Send the email
+      await transporter.sendMail(mailOptions);
+
+      res.render("forget-password" , {message: "Check Email for reset link"})
+    }catch(error){
+      console.error(error)
+      res.render("forget-password" , {message: "An Error Occurred"})
+    }
+  })
+
+
+router.route('/reset-password/:token')
+  .get((req,res) => {
+    const {token} = req.params
+    return res.render("reset-password", {token});
+  })
+  .post(async (req,res) =>{
+    try {
+      const { token } = req.params;
+      console.log(req.params.token)
+      console.log(req.params)
+      const { password } = req.body;
+
+      // Find the user with the specified password reset token
+      const user = await User.findOne({
+        where: {resetPasswordToken: token}
+      });
+
+      console.log(user)
+
+      if (!user) {
+        return res.render("reset-password" , {message: 'Invalid or expired token'});
+      }
+
+      // Set the new password and clear the reset password fields
+      const hashedPassword = await bcrypt.hash(password, 8);
+      user.password = hashedPassword;
+      user.resetPasswordToken = undefined;
+      user.resetPasswordExpires = undefined;
+
+      await user.save();
+
+      console.log(user)
+
+      res.render("reset-password" , {message: 'Password reset successfully, Please Login'});
+    } catch (error){
+        console.error(error)
+        res.render("reset-password" , {message: "An Error Occurred"});
+      }
+  })
+
+
 module.exports = router;
