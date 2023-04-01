@@ -1,17 +1,13 @@
 <div class="container-fluid">
-  <div class="row flex-nowrap">
-    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-      <div
-        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
-      >
-        <a
-          href="/task"
-          class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
-          style="font-weight:600; font-size:18px;"
-        >
-          <span class="fs-5 d-none d-sm-inline" style="color:yellow">My Roadmap</span>
-        </a>
-<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/task"
+                    class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+                    style="font-weight:600; font-size:18px;">
+                    <span class="fs-5 d-none d-sm-inline" style="color:yellow">My Roadmap</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="/task/get-started" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i>
@@ -113,28 +109,75 @@
                         </a>
                     </li>
                 </ul>
-        <hr />
-      </div>
+                <hr />
+            </div>
+        </div>
+        <div class="col container-fluid m-3 py-3">
+            <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Starting Your Journey</h1>
+            {{#if tasks.task5}}
+            <a class="complete-btn" href="/task/complete/task5"> Task Completed</a>
+            {{else}}
+            <a class="complete-btn" href="/task/complete/task5"> Click to Complete Task</a>
+            {{/if}}
+            <p style="margin: 30px 0px;">If you're an international student planning to study in the United States,
+                getting started can seem overwhelming. However, with careful planning and preparation, you can set
+                yourself up for success.</p>
+
+            <div class="accordion mt-4" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h2 style="font-size: 3.5vh">Research Schools</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Start by researching universities and programs that match your interests and academic
+                                goals. Consider factors such as location, size, and culture, and reach out to university
+                                representatives or current students for more information.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <h2 style="font-size: 3.5vh">Apply</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Once you've identified potential universities, familiarize yourself with the
+                                application process and deadlines (more in the Apply tab). Make sure to gather
+                                all required documents, such as transcripts and test scores (more in Testing
+                                tab), and start working on your essays and personal statements well in advance
+                                of the application deadline.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <h2 style="font-size: 3.5vh">Accepted</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Once you've been accepted, start preparing for your move by researching housing options
+                                and transportation (more in Relocate tab), and making sure you have all necessary
+                                documents and visas (more in Visa tab).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col container-fluid m-3 py-3">
-      <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Where to Begin</h1>
-      {{#if tasks.task1}}
-      <a class="complete-btn" href="/task/complete/task1"> Task Completed</a>
-      {{else}}
-      <a class="complete-btn" href="/task/complete/task1"> Click to Complete Task</a>
-      {{/if}}
-      <p style="margin: 30px;"></p>
-        Iternational Student Assist provides a streamlined roadmap of the
-        processes, tests, and forms required for you to apply to universities in
-        the US.
-      </p>
-      <p>
-        The sidebar on the left is a list of tasks for you to complete, with
-        information and links to websites that have forms or more information
-        about what you need to do next in your journey to becoming a US student.
-        These can be done in any order, and once finished, you can click the
-        "Completed" button on the task page to keep track of your progress.
-      </p>
-    </div>
-  </div>
 </div>

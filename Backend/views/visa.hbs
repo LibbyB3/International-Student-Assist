@@ -2,11 +2,12 @@
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/task" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+                <a href="/task"
+                    class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
                     style="font-weight:600; font-size:18px;">
                     <span class="fs-5 d-none d-sm-inline" style="color:yellow">My Roadmap</span>
                 </a>
-<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="/task/get-started" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i>
@@ -112,14 +113,110 @@
             </div>
         </div>
         <div class="col container-fluid m-3 py-3">
-                        
-            <h1 style="font-size: 4.5vh; margin-bottom: 30px;">I-20, Visa and Fees Page</h1>
+
+            <h1 style="font-size: 4.5vh; margin-bottom: 30px;">I-20, Visa and Fees</h1>
 
             {{#if tasks.task8}}
             <a class="complete-btn" href="/task/complete/task8"> Task Completed</a>
             {{else}}
             <a class="complete-btn" href="/task/complete/task8"> Click to Complete Task</a>
             {{/if}}
+            <p style="margin: 30px 0px">If you're an international student planning to study in the United States, you
+                will likely need an I-20
+                form, a visa, and will need to pay fees associated with these documents, also a SEVIS fee.</p>
+            <div class="accordion mt-4" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h2 style="font-size: 3.5vh">What is an I-20?</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>The I-20 form is a document issued by your university or college that confirms your
+                                enrollment and provides information about your program and funding. You will need this
+                                document to apply for your student visa.</p>
+                            <p>Here is the link to a website where you can learn more about what an I-20 is and how to
+                                get yours: <a
+                                    href="https://studyinthestates.dhs.gov/students/prepare/students-and-the-form-i-20"
+                                    target="_blank"> I-20 Form</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <h2 style="font-size: 3.5vh">What is a Visa? How do I get one?</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>A citizen of a foreign country who wants to study in the United States must first obtain
+                                a student visa.</p>
+                            <p>The visa application process can take time, so make sure to start early and gather all
+                                required documents, including your I-20, passport, and financial statements. Once you
+                                receive your visa, you will also need to pay a SEVIS fee, which supports the Student and
+                                Exchange Visitor Program.
+                            </p>
+                            <p>Here is a link to a website where you can learn more about it: <a
+                                    href="https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html"
+                                    target="_blank"> Visa</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <h2 style="font-size: 3.5vh">What is a SEVIS fee?</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>A SEVIS fee is a fee that international students and exchange visitors must pay to the
+                                U.S. government in order to cover the cost of the Student and Exchange Visitor
+                                Information System (SEVIS), a web-based system used to manage information on
+                                international students and exchange visitors in the United States.
+                            </p>
+                            <p>
+                                The SEVIS fee is paid by individuals who are applying for F-1, J-1, or M-1 visas to
+                                enter the United States for academic or vocational purposes, as well as by individuals
+                                who are already in the United States and seeking to change their visa status to one of
+                                these categories.
+                            </p>
+                            <p>
+                                The SEVIS fee is a one-time fee and must be paid before a student or exchange visitor
+                                can apply for a visa or travel to the United States.
+                            </p>
+                            <p>The current SEVIS fee amount can be found on the U.S. Immigration and Customs Enforcement
+                                (ICE) website: <a href="https://www.ice.gov/sevis/i901" target="_blank"> SEVIS Fee</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <h2 style="font-size: 3.5vh">Stay Ahead</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Make sure to keep track of all important deadlines and requirements and seek out
+                                assistance from your university's international student office or an immigration
+                                attorney if you have any questions or concerns.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

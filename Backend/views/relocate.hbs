@@ -2,11 +2,12 @@
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/task" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+                <a href="/task"
+                    class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
                     style="font-weight:600; font-size:18px;">
                     <span class="fs-5 d-none d-sm-inline" style="color:yellow">My Roadmap</span>
                 </a>
-<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="/task/get-started" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i>
@@ -112,11 +113,78 @@
             </div>
         </div>
         <div class="col container-fluid m-3 py-3">
-            <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Content for Relocate Page</h1>            {{#if tasks.task9}}
+            <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Relocating to the United States</h1> {{#if tasks.task9}}
             <a class="complete-btn" href="/task/complete/task9"> Task Completed</a>
             {{else}}
             <a class="complete-btn" href="/task/complete/task9"> Click to Complete Task</a>
             {{/if}}
+            <p style="margin: 30px 0px;">
+                Relocating to a new country as an international student can be both exciting and overwhelming. It's
+                important to plan ahead and prepare for the challenges and opportunities that come with moving to a new
+                place.
+            </p>
+            <div class="accordion mt-4" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h2 style="font-size: 3.5vh">Different cultures</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Consider researching the culture and customs of the United States, and
+                                start looking into housing options, transportation, and other practical matters well in
+                                advance of your move.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <h2 style="font-size: 3.5vh">Look to your campus community</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Don't be afraid to reach out to your university's international student office or other
+                                support services for guidance and assistance. Once you arrive, take the time to explore
+                                your new surroundings, get to know your classmates and faculty, and get involved in
+                                campus life.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <h2 style="font-size: 3.5vh">Housing</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Start by researching housing options and locations that are convenient to your
+                                university, and consider factors such as safety, cost, and distance from public
+                                transportation.
+                            </p>
+                            <p>Many universities offer housing options specifically for international students, such as
+                                on-campus housing or apartments managed by the university. These options can provide a
+                                supportive community and make it easier to get settled in your new surroundings.</p>
+                            <p>You can also consider private housing options, such as apartments or shared housing. Be
+                                sure to ask for recommendations from other international students, check online reviews,
+                                and ask questions about utilities and other expenses before signing a lease.</p>
+                            <p>Finally, make sure you have all necessary documentation and paperwork for your housing,
+                                such as lease agreements and renter's insurance, and stay in communication with your
+                                landlord or housing office throughout your stay.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
