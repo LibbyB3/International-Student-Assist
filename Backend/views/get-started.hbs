@@ -114,13 +114,26 @@
         </div>
         <div class="col container-fluid m-3 py-3">
             <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Starting Your Journey</h1>
-            {{#if tasks.task5}}
-            <a class="complete-btn" href="/task/complete/task5"> Task Completed</a>
+            {{#if tasks.task1}}
+            <a class="complete-btn" href="/task/complete/task1"> Task Completed</a>
             {{else}}
-            <a class="complete-btn" href="/task/complete/task5"> Click to Complete Task</a>
+            <a class="complete-btn" href="/task/complete/task1"> Click to Complete Task</a>
             {{/if}}
+            <p style="margin: 30px;"></p>
+            International Student Assist provides a streamlined roadmap of the
+            processes, tests, and forms required for you to apply to universities in
+            the US.
+            </p>
+            <p>
+                The sidebar on the left is a list of tasks for you to complete, with
+                information and links to websites that have forms or more information
+                about what you need to do next in your journey to studying in the US.
+                These can be done in any order, and once finished, you can click the
+                "Completed" button on the task page to keep track of your progress.
+            </p>
+
             <p style="margin: 30px 0px;">If you're an international student planning to study in the United States,
-                getting started can seem overwhelming. However, with careful planning and preparation, you can set
+                beginning the process to relocate can seem overwhelming. However, with careful planning and preparation, you can set
                 yourself up for success.</p>
 
             <div class="accordion mt-4" id="accordionExample">
@@ -128,13 +141,13 @@
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <h2 style="font-size: 3.5vh">Research Schools</h2>
+                            <h2 style="font-size: 3.5vh">Phase 1: Research</h2>
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p>Start by researching universities and programs that match your interests and academic
+                            <p>Phase 1 includes the "Research Schools" task. Start by researching universities and programs that match your interests and academic
                                 goals. Consider factors such as location, size, and culture, and reach out to university
                                 representatives or current students for more information.</p>
 
@@ -145,13 +158,14 @@
                     <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <h2 style="font-size: 3.5vh">Apply</h2>
+                            <h2 style="font-size: 3.5vh">Phase 2: Submitting Applications and Documents</h2>
                         </button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p>Once you've identified potential universities, familiarize yourself with the
+                            <p>Phase 2 includes the "Apply", "Submit Transcripts", "English Proficiency", and "Testing and Scores" tasks. 
+                                Once you've identified potential universities, familiarize yourself with the
                                 application process and deadlines (more in the Apply tab). Make sure to gather
                                 all required documents, such as transcripts and test scores (more in Testing
                                 tab), and start working on your essays and personal statements well in advance
@@ -164,13 +178,14 @@
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <h2 style="font-size: 3.5vh">Accepted</h2>
+                            <h2 style="font-size: 3.5vh">Phase 3: Preparing to Move</h2>
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p>Once you've been accepted, start preparing for your move by researching housing options
+                            <p>Phase 3 includes the "You've Been Accepted", "I-20, Visa, and Fees", "Planning to Relocate", and "Additional Tips" tasks.
+                                Once you've been accepted, start preparing for your move by researching housing options
                                 and transportation (more in Relocate tab), and making sure you have all necessary
                                 documents and visas (more in Visa tab).
                             </p>
@@ -180,14 +195,8 @@
             </div>
         </div>
     </div>
-    <div class="col container-fluid m-3 py-3">
-      <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Where to Begin</h1>
-      {{#if tasks.task1}}
-      <a class="complete-btn" href="/task/complete/task1"> Task Completed</a>
-      {{else}}
-      <a class="complete-btn" href="/task/complete/task1"> Click to Complete Task</a>
-      {{/if}}
-      <p style="margin: 30px;"></p>
+
+      {{!-- <p style="margin: 30px;"></p>
         International Student Assist provides a streamlined roadmap of the
         processes, tests, and forms required for you to apply to universities in
         the US.
@@ -198,7 +207,7 @@
         about what you need to do next in your journey to becoming a US student.
         These can be done in any order, and once finished, you can click the
         "Completed" button on the task page to keep track of your progress.
-      </p>
-    </div>
+      </p> --}}
+
   </div>
 </div>
