@@ -200,7 +200,7 @@ router.route('/reset-password/:token')
       res.render("reset-password" , {message: 'Password reset successfully, Please Login'});
     } catch (error){
         console.error(error)
-        res.render("reset-password" , {message: "An Error Occurred"});
+        res.render("reset-password" , {message: "An Error occurred"});
       }
   })
 
