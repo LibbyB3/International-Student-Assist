@@ -2,7 +2,10 @@
     <div class=" container mt-4 mb-4">
       {{#if message }}
         <h4 class="alert alert-danger mt-4"> {{ message }}</h4>
+      {{else if success}}
+        <h4 class="alert alert-success mt-4"> {{ success }}</h4>
       {{/if}}
+
     </div>
     <div class="container mt-4 jumbotron">
         <div class="card">

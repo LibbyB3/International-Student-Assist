@@ -45,7 +45,8 @@ a.nav-link:hover {
 }
 
 .complete-btn{
-    background-color: #563d7c;
+    /* background-color: #563d7c; */
+    background-color: #0d63fd;
     color: white;
     padding: 15px 25px;
     text-decoration: none;
