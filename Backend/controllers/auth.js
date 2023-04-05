@@ -52,9 +52,7 @@ exports.register = async (req, res) => {
                         .then(() => console.log("Task created for User"))
                         .catch((error) => console.log(error));
 
-                    return res.render('register', {
-                        success: 'User Registered'
-                    });
+                    return res.redirect('/task/get-started');
                 });
             }
 
