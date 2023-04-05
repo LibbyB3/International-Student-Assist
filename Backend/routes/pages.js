@@ -7,8 +7,13 @@ const router = express.Router();
 router.use(cookieParser());
 router.use(validateToken);
 
-router.get("/", (req, res) => {
-  res.render("index");
+router.get("/", validateToken, (req, res) => {
+
+  if (res.locals.authenticated) {
+    res.render("index", { username: req.jwtPayload.name });
+  } else {
+    res.render("index");
+  }
 });
 
 router.get("/register", (req, res) => {
@@ -24,12 +29,24 @@ router.get("/logout", (req, res) => {
   res.redirect("login");
 });
 
-router.get("/about", (req, res) => {
-  res.render("aboutUs");
+router.get("/terms", (req, res) => {
+  res.render("termsAndConditions");
 });
 
-router.get("/contact", (req, res) => {
-  res.render("contactUs");
+router.get("/about", validateToken, (req, res) => {
+  if (res.locals.authenticated) {
+    res.render("aboutUs", { username: req.jwtPayload.name });
+  } else {
+    res.render("aboutUs");
+  }
+});
+
+router.get("/contact", validateToken, (req, res) => {
+  if (res.locals.authenticated) {
+    res.render("contactUs", { username: req.jwtPayload.name });
+  } else {
+    res.render("contactUs");
+  }
 });
 
 router.post("/sendemail", async (req, res) => {

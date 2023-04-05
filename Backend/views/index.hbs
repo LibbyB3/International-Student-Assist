@@ -4,7 +4,13 @@
     <p class="lead">
       Find out everything you need to know about how to apply for college in the
       USA</p>
+    {{#if authenticated}}
+        <p><a href="/task" class="btn btn-primary btn-lg" role="button">Go to your Roadmap</a></p>
+
+    {{else}}
     <p><a href="/task" class="btn btn-primary btn-lg" role="button">Get Started</a></p>
+    {{/if}}
+
   </div>
 </header>
 
