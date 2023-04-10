@@ -2,11 +2,12 @@
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/task" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+                <a href="/task"
+                    class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
                     style="font-weight:600; font-size:18px;">
                     <span class="fs-5 d-none d-sm-inline" style="color:yellow">My Roadmap</span>
                 </a>
-<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="/task/get-started" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i>
@@ -119,59 +120,81 @@
             <a class="complete-btn" href="/task/complete/task6"> Click to Complete Task</a>
             {{/if}}
 
-        <div class="accordion mt-4" id="accordionExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <h2 style="font-size: 3.5vh">What are the ACT and SAT?</h2>
-            </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-            <p>Although fewer and fewer universities are requiring students to take standardized tests like the SAT and ACT, many
-                universities still require them.</p>
-            <p>The ACT (American College Testing) and SAT (Scholastic Aptitude Test) are standardized exams that test students’
-                knowledge of broad subjects like math, reading, writing, and scientific reasoning. You should definitely find out if
-                your chosen US college or university requires one of these tests because you’ll want to begin studying for it as
-                early as possible. For schools that require one of these tests, scores are factored into decisions to admit or deny
-                students. In most cases, the higher your score, the better chance you have of being admitted to your chosen school.
-            </p>
-            </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            <h2 style="font-size: 3.5vh">Do I have to take the ACT or SAT?</h2>
-            </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <p>In many cases, the answer is no. Many schools no longer require these standardized tests and for many others, taking
-                the ACT or SAT is optional. However, if the school you want to go to states that the test is optional, keep in mind
-                that a strong ACT or SAT score can strengthen your application.</p>            
+            <div class="accordion mt-4" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h2 style="font-size: 3.5vh">What are the ACT and SAT?</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Although fewer and fewer universities are requiring students to take standardized tests
+                                like the SAT and ACT, many
+                                universities still require them.</p>
+                            <p>The ACT (American College Testing) and SAT (Scholastic Aptitude Test) are standardized
+                                exams that test students’
+                                knowledge of broad subjects like math, reading, writing, and scientific reasoning. You
+                                should definitely find out if
+                                your chosen US college or university requires one of these tests because you’ll want to
+                                begin studying for it as
+                                early as possible. For schools that require one of these tests, scores are factored into
+                                decisions to admit or deny
+                                students. In most cases, the higher your score, the better chance you have of being
+                                admitted to your chosen school.
+                            </p>
+                        </div>
+                    </div>
                 </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <h2 style="font-size: 3.5vh">Do I have to take the ACT or SAT?</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>In many cases, the answer is no. Many schools no longer require these standardized tests
+                                and for many others, taking
+                                the ACT or SAT is optional. However, if the school you want to go to states that the
+                                test is optional, keep in mind
+                                that a strong ACT or SAT score can strengthen your application.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <h2 style="font-size: 3.5vh">Where can I take the ACT or SAT?</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>The SAT is taken digitally and at some testing locations, it can be taken on the
+                                student’s own laptop. The test is
+                                taken in person at any one of the many international testing facilities that operate in
+                                partnership with the College
+                                Board, the organization that administers the SAT. You can find test dates and testing
+                                facilities here:
+                                <a href="https://satsuite.collegeboard.org/sat/test-center-search" target="_blank">
+                                    SAT</a>
+                            </p>
+                            <p>The ACT can be taken on paper or digitally. International students can sign up for the
+                                test here:
+                                <a href="https://global.act.org/content/global/en/products-and-services/the-act-non-us.html"
+                                    target="_blank">ACT</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <p><a href="/" class="complete-btn" role="button">Back to Home</a></p>
             </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            <h2 style="font-size: 3.5vh">Where can I take the ACT or SAT?</h2>
-            </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-            <p>The SAT is taken digitally and at some testing locations, it can be taken on the student’s own laptop. The test is
-                taken in person at any one of the many international testing facilities that operate in partnership with the College
-                Board, the organization that administers the SAT. You can find test dates and testing facilities here: 
-                <a href="https://satsuite.collegeboard.org/sat/test-center-search" target="_blank"> SAT</a></p>
-            <p>The ACT can be taken on paper or digitally. International students can sign up for the test here: 
-                <a href="https://global.act.org/content/global/en/products-and-services/the-act-non-us.html"
-                    target="_blank">ACT</a></p>  
-            </div>
-            </div>
-        </div>
-        </div>
         </div>
     </div>
 </div>
