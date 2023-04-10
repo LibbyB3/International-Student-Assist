@@ -41,7 +41,7 @@ app.use(
 // set the view engine to ejs
 // use res.render to load up an ejs view file
 app.set("view engine", "hbs");
-
+app.set('views', __dirname + '/views');
 //Layouts for the frontend using main.html
 app.engine(
   "hbs",
@@ -79,6 +79,8 @@ app.use("/", require("./routes/pages"));
 app.use("/auth", require("./routes/auth"));
 app.use("/task", require("./routes/task"));
 
-app.listen(5000, () => {
-  console.log("server started on port 5000");
+const port = 8080;
+
+app.listen(port, () => {
+  console.log(`server started on port ${port}`);
 });
