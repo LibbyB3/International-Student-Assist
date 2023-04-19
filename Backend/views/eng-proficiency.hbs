@@ -2,11 +2,12 @@
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/task" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+                <a href="/task"
+                    class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
                     style="font-weight:600; font-size:18px;">
                     <span class="fs-5 d-none d-sm-inline" style="color:yellow">My Roadmap</span>
                 </a>
-<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="/task/get-started" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i>
@@ -114,39 +115,51 @@
         <div class="col container-fluid m-3 py-3">
             <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Demonstrate English Proficiency</h1>
             {{#if tasks.task5}}
-            <a class="complete-btn" href="/task/complete/task5"> Task Completed</a>
+            <a class="btn btn-primary btn-lg" role="button" href="/task/complete/task5"> Task Completed</a>
             {{else}}
-            <a class="complete-btn" href="/task/complete/task5"> Click to Complete Task</a>
+            <a class="btn btn-primary btn-lg" role="button" href="/task/complete/task5"> Click to Complete Task</a>
             {{/if}}
-            <p style="margin: 30px 0px;">Universities want their students to succeed, so most US universities will want to make sure that you are proficient
-                in English either before they admit you to their university, or after admission but prior to course enrollment. If
-                the official language of your home country is also English, or if you’ve studied for a significant period in another
-                English-speaking country, this requirement may be waived. If not, you’ll have to demonstrate proficiency.</p>
+            <p style="margin: 30px 0px;">Universities want their students to succeed, so most US universities will want
+                to make sure that you are proficient
+                in English either before they admit you to their university, or after admission but prior to course
+                enrollment. If
+                the official language of your home country is also English, or if you’ve studied for a significant
+                period in another
+                English-speaking country, this requirement may be waived. If not, you’ll have to demonstrate
+                proficiency.</p>
 
-            <div class="accordion mt-4" id="accordionExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <h2 style="font-size: 3.5vh">How do I demonstrate English proficiency?</h2>
-            </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-            <p>Most universities provide many ways to demonstrate proficiency in English, so you’ll need to visit the university’s
-                international admissions website to see their guidelines. However, three of the most common ways US institutions
-                allow you to demonstrate proficiency are as follows:</p>
-            
-            <ol>
-                <li> 1. achieving the minimum score on the TOEFL (Test of English as a Foreign Language) which is determined to be
-                    adequate by the US institution you are applying to;</li>
-                <li> 2. earning at least a minimum passing score on the IELTS (International English Language Testing System); or</li>
-                <li> 3. successfully completing an English language program and earning an ELS EAP (English for Academic Purposes)
-                    Level 112 Certificate of Completion.</li>
-            </ol>
+            <div class="accordion m-4" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h2 style="font-size: 3.5vh">How do I demonstrate English proficiency?</h2>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Most universities provide many ways to demonstrate proficiency in English, so you’ll need
+                                to visit the university’s
+                                international admissions website to see their guidelines. However, three of the most
+                                common ways US institutions
+                                allow you to demonstrate proficiency are as follows:</p>
+
+                            <ol>
+                                <li> 1. achieving the minimum score on the TOEFL (Test of English as a Foreign Language)
+                                    which is determined to be
+                                    adequate by the US institution you are applying to;</li>
+                                <li> 2. earning at least a minimum passing score on the IELTS (International English
+                                    Language Testing System); or</li>
+                                <li> 3. successfully completing an English language program and earning an ELS EAP
+                                    (English for Academic Purposes)
+                                    Level 112 Certificate of Completion.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
-        </div>
+            <p><a href="/task" class="btn btn-primary btn-lg" role="button">Back to Roadmap</a></p>
         </div>
     </div>
 </div>

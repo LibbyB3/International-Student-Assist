@@ -1,53 +1,55 @@
+<div class=" container mt-4 mb-4 w-50">
+  {{#if message }}
+  <h4 class="alert alert-danger mt-4"> {{ message }}</h4>
+  {{else if success}}
+  <h4 class="alert alert-success mt-4"> {{ success }}</h4>
+  {{/if}}
 
-    <div class=" container mt-4 mb-4 w-50">
-      {{#if message }}
-        <h4 class="alert alert-danger mt-4"> {{ message }}</h4>
-      {{else if success}}
-        <h4 class="alert alert-success mt-4"> {{ success }}</h4>
-      {{/if}}
-
+</div>
+<div class="container mt-4 jumbotron w-auto">
+  <div class="card">
+    <div class="card-header">
+      Register Form
     </div>
-    <div class="container mt-4 jumbotron w-50">
-        <div class="card">
-          <div class="card-header">
-            Register Form
-          </div>
-      <div class="card-body">
-        <form action="/auth/register" method="POST">
-          <div class="form-group mt-3">
+    <div class="card-body">
+      <form action="/auth/register" method="POST">
+        <div class="form-group mt-3">
 
-            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
 
-           
-          </div>
 
-          <div class="form-group mt-3">
+        </div>
 
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
-           
-          </div>
+        <div class="form-group mt-3">
 
-          <div class="form-group mt-3">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
 
-            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
-           
-          </div>
+        </div>
 
-          <div class="form-group mt-3">
+        <div class="form-group mt-3">
 
-            <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Re-Enter Password" required>
-          
-          </div>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password"
+            required>
 
-          <div class="form-group form-check mt-3">
-            <input type="checkbox" class="form-check-input" id="terms" required>
-            <label class="form-check-label" for="exampleCheck1">By signing up you agree to <a href="/terms" target="_blank">the terms and conditions of use.</a></label>
-          </div>
+        </div>
 
-          <button type="submit" class="btn btn-warning mt-3">Register</button>
+        <div class="form-group mt-3">
 
-        </form>
-        <a href="/login" class="btn btn-warning mt-3">Log in</a>
-      </div>
+          <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm"
+            placeholder="Re-Enter Password" required>
+
+        </div>
+
+        <div class="form-group form-check mt-3">
+          <input type="checkbox" class="form-check-input" id="terms" required>
+          <label class="form-check-label" for="exampleCheck1">By signing up you agree to <a href="/terms"
+              target="_blank">the terms and conditions of use.</a></label>
+        </div>
+
+        <button type="submit" class="btn btn-warning mt-3">Register</button>
+
+      </form>
+      <a href="/login" class="btn btn-warning mt-3">Log in</a>
     </div>
-    </div>
+  </div>
+</div>
