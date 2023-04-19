@@ -113,11 +113,11 @@
             </div>
         </div>
         <div class="col container-fluid m-3 py-3">
-            <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Starting Your Journey</h1>
+            <h1 style="font-size: 4.5vh; margin-bottom: 30px;">Getting Started</h1>
             {{#if tasks.task1}}
-            <a class="complete-btn" href="/task/complete/task1"> Task Completed</a>
+            <a class="btn btn-primary btn-lg" role="button" href="/task/complete/task1"> Task Completed</a>
             {{else}}
-            <a class="complete-btn" href="/task/complete/task1"> Click to Complete Task</a>
+            <a class="btn btn-primary btn-lg" role="button" href="/task/complete/task1"> Click to Complete Task</a>
             {{/if}}
             <p style="margin: 30px;"></p>
             International Student Assist provides a streamlined roadmap of the
@@ -131,13 +131,18 @@
                 These can be done in any order, and once finished, you can click the
                 "Completed" button on the task page to keep track of your progress.
             </p>
+            <p>
+                There is also a Roadmap that shows all of these tasks and whether you have completed them or not. You
+                can reach your Roadmap by clicking the button at the bottom of this page or clicking the "My Roadmap"
+                section on the sidebar to the left.
+            </p>
 
             <p style="margin: 30px 0px;">If you're an international student planning to study in the United States,
                 beginning the process to relocate can seem overwhelming. However, with careful planning and preparation,
                 you can set
                 yourself up for success.</p>
 
-            <div class="accordion mt-4" id="accordionExample">
+            <div class="accordion m-4" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse"
@@ -197,9 +202,7 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <p><a href="/" class="complete-btn" role="button">Back to Home</a></p>
-            </div>
+            <p><a href="/task" class="btn btn-primary btn-lg" role="button">Back to Roadmap</a></p>
         </div>
     </div>
 
