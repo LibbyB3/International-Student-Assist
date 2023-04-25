@@ -8,7 +8,6 @@ router.use(cookieParser());
 router.use(validateToken);
 
 router.get("/", validateToken, (req, res) => {
-
   if (res.locals.authenticated) {
     res.render("index", { username: req.jwtPayload.name });
   } else {
@@ -88,7 +87,7 @@ router.post("/sendemail", async (req, res) => {
     html: output, // html body
   });
   let userMailOptions = await transporter.sendMail({
-    from: '"ISA Message" libbyblair13@gmail.com', // sender address
+    from: '"ISA Message" internationalstudentassistapp@gmail.com', // sender address
     to: `${req.body.email}`, // list of receivers
     subject: "Thank you for contacting us!", // Subject line
     text: "Hello world?", // plain text body
